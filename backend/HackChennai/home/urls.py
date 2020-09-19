@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import ProfileAPI, VideoAPI,CourseAPI, apiListView
+from .views import ProfileAPI, VideoAPI,CourseAPI, apiListView, nominate, like
 
 urlpatterns = [
     path('', apiListView),
@@ -13,4 +13,7 @@ urlpatterns = [
 
     path('course/', CourseAPI.as_view()),
     # path('course/<int:pk>', CourseView.as_view()),
+
+    path('nominate/', nominate),
+    path('like/', like),
 ]

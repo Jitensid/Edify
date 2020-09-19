@@ -20,7 +20,7 @@ class Video(models.Model):
     title = models.CharField(max_length = 70, blank = False)
     description = models.TextField()
     time_created = models.DateTimeField(default=timezone.localtime().now)
-    url = models.TextField()
+    video = models.FileField(upload_to="videos/", null=True, blank=True)
 
     def __str__(self):
         return "Video" + str(self.id)
@@ -46,8 +46,10 @@ class Course(models.Model):
     founder = models.ForeignKey(User, on_delete=models.CASCADE)
     videos = models.ManyToManyField(Video, null=True, blank=True)
     description = models.TextField()
-    upvotes = models.IntegerField(default=0) # For Certification Purpose
-    nominations = models.IntegerField(default=0) # used for Govt Schemes
+    liked_by = models.ManyToManyField(User, related_name="user_liked") # For Certification Purpose
+    no_of_likes = models.IntegerField(default=0)
+    nominated_by = models.ManyToManyField(User, related_name="user_nominated") # used for Govt Schemes
+    no_of_nominations = models.IntegerField(default=0)
     skill = models.CharField(choices = skill_choices, max_length = 50)
     language = models.CharField(choices = langauge_choices,max_length = 100)
 

@@ -150,6 +150,7 @@ export default function ResponsivePlayer() {
   
         return (
           <React.Fragment>
+              
           <CssBaseline />
           <AppBar position="relative">
           

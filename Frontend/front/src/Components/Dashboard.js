@@ -28,6 +28,10 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+
+import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios';
+
+
 const drawerWidth = 200;
 function Copyright() {
   return (
@@ -372,7 +376,7 @@ export default function Dashboard() {
                     </Typography> */}
                   </CardContent>
                   <CardActions>
-                  {['Go to Player'].map((text, index) => (
+                  {['Play Video'].map((text, index) => (
                     <Link to="/player">
                       <ListItem button key={text}>
                       <ListItemText primary={text} />

@@ -7,7 +7,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class Profile(models.Model):
     """
-    Profile for Student user
+    Profile for user
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_pic = models.ImageField()

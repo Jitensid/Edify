@@ -131,11 +131,10 @@ li{
 }
 
 
-.nominate-button {
-    margin-top: 20px;
-    height: 50px;
+.donate {
+   width: 100px;
     color: white;
     align-self: center;
-
+    text-align: center;
 }
 

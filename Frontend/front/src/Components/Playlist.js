@@ -5,20 +5,21 @@ import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
+import {White} from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
  
-    appPlaylist: {
+    addPlaylist: {
         marginLeft: '10px',
         flex: 1,
+        color: "white",
     },
     cardGrid: {
       paddingTop: theme.spacing(8),
@@ -60,9 +61,11 @@ export default function SimpleCard() {
       <Typography variant="h6" color="inherit" noWrap className={classes.appBarName} >
         Your Playlists
       </Typography>
+      <Link to='addplaylist'>
       <Button size="small" color="inherit" className={classes.addPlaylist}>
                 Add New Playlist
         </Button>
+        </Link>
     </Toolbar>
   </AppBar>
     <Container className={classes.cardGrid} >
@@ -79,11 +82,13 @@ export default function SimpleCard() {
               
             </CardContent>
             <CardActions className={classes.cardActions}>
+              <Link to='addvideo'>
               <Button size="small" color="primary">
-                View
+                Add Video
               </Button>
+              </Link>
               <Button size="small" color="primary">
-                Edit
+                Edit Playlist
               </Button>
             </CardActions>
           </Card>

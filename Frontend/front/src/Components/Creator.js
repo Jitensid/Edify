@@ -10,7 +10,7 @@ import AppBar from '@material-ui/core/AppBar';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 
@@ -59,11 +59,11 @@ export default function ResponsivePlayer() {
                
             <div className='creator-details'>
                       <div class="Avatar">
-                        <a href='#'><Avatar className={classes.avatar}>OP</Avatar></a>
+                        <Avatar className={classes.avatar}>OP</Avatar>
                       </div>
                       <div class='creator-text-details'>
                       <div class='creator-name'>
-                        <a href='#'>Creator Name</a>
+                       Creator Name
                       </div>
                       <div class="upload-date">
                         Upload Date
@@ -73,7 +73,10 @@ export default function ResponsivePlayer() {
                       </div>
                      
                       </div>
-                     
+                     <div>
+                     <button class="w3-button w3-green btn donate" type="submit">DONATE</button>
+                     </div>
+
                     </div>
                 
             </div>

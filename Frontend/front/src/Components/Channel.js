@@ -187,11 +187,21 @@ export default function Channel() {
         </div>
         <Divider />
         <List>
-          {['Profile', 'Videos'].map((text, index) => (
+          {['Profile'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
+          ))}
+        </List>
+        <List>
+          {['Playlists'].map((text, index) => (
+            <Link to='/playlist'>
+            <ListItem button key={text}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+            </Link>
           ))}
         </List>
         <Divider />

@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
+import FormControl from '@material-ui/core/FormControl';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -15,7 +16,6 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import view from './Images/view.webp';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-// import Link from '@material-ui/core/Link';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -28,6 +28,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import TextField from '@material-ui/core/TextField';
 const drawerWidth = 200;
 function Copyright() {
   return (
@@ -137,76 +138,17 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginLeft: 0,
   },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: '25ch',
+  },
+
 }));
 const username = "John Doe";
-const channel = true;
 // const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const cards2 = [
-  {
-    id: 1,
-    title: "Title 1",
-    creator: "Creator 1",
-    tag: "Tag 1",
-    views: "Views 1"
-  },
-  {
-    id: 2,
-    title: "Title 2",
-    creator: "Creator 2",
-    tag: "Tag 2",
-    views: "Views 2"
-  },
-  {
-    id: 3,
-    title: "Title 3",
-    creator: "Creator 3",
-    tag: "Tag 3",
-    views: "Views 3"
-  },
-  {
-    id: 4,
-    title: "Title 4",
-    creator: "Creator 4",
-    tag: "Tag 4",
-    views: "Views 4"
-  },
-  {
-    id: 5,
-    title: "Title 5",
-    creator: "Creator 5",
-    tag: "Tag 5",
-    views: "Views 5"
-  },
-  {
-    id: 6,
-    title: "Title 6",
-    creator: "Creator 6",
-    tag: "Tag 6",
-    views: "Views 6"
-  },
-  {
-    id: 7,
-    title: "Title 7",
-    creator: "Creator 7",
-    tag: "Tag 7",
-    views: "Views 7"
-  },
-  {
-    id: 8,
-    title: "Title 8",
-    creator: "Creator 8",
-    tag: "Tag 8",
-    views: "Views 8"
-  },
-  {
-    id: 9,
-    title: "Title 9",
-    creator: "Creator 9",
-    tag: "Tag 9",
-    views: "Views 9"
-  }
-]
-export default function Dashboard() {
+
+export default function AddPlaylist() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -259,7 +201,7 @@ export default function Dashboard() {
         </div>
         <Divider />
         <List>
-          {['Watch History', 'Subscriptions', 'Profile'].map((text, index) => (
+          {['Watch History', 'Subscriptions'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
@@ -267,27 +209,16 @@ export default function Dashboard() {
           ))}
         </List>
         <Divider />
-        {channel ? (
-            <List>
-            {['Go to Channel'].map((text, index) => (
-                <Link to="/channel">
-                  <ListItem button key={text}>
-                  <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                  <ListItemText primary={text} />
-                  </ListItem>
-                </Link>
-            ))}
-          </List>
-        ) : <List>
-        {['Create Channel'].map((text, index) => (
-            <Link to="/createchannel">
-              <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-              </ListItem>
+        <List>
+          {['Dashboard'].map((text, index) => (
+            <Link to="/">
+                <ListItem button key={text}>
+                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemText primary={text} />
+                </ListItem>
             </Link>
-        ))}
-      </List>}
+          ))}
+        </List>
       </Drawer>
       <main
         className={clsx(classes.content, {
@@ -297,98 +228,47 @@ export default function Dashboard() {
         <div className={classes.drawerHeader} />
       </main>
     </div>
-      {/* <SideNav
-    onSelect={(selected) => {
-        // Add your code here
-    }}
->
-    <SideNav.Toggle />
-    <SideNav.Nav defaultSelected="home">
-        <NavItem eventKey="home">
-            <NavIcon>
-                <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
-            </NavIcon>
-            <NavText>
-                Home
-            </NavText>
-        </NavItem>
-        <NavItem eventKey="charts">
-            <NavIcon>
-                <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
-            </NavIcon>
-            <NavText>
-                Charts
-            </NavText>
-        </NavItem>
-    </SideNav.Nav>
-</SideNav> */}
       <main>
-        
-        {/* Hero unit */}
-        <div className={classes.heroContent}>
+      <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Welcome, {username}
+              Add a New Playlist!
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Browse through hundreds of courses available for free!
+              It's Easy!
             </Typography>
-            {/* <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
-                <Grid item>
-                  <Button variant="contained" color="primary">
-                    Main call to action
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Secondary action
-                  </Button>
-                </Grid>
-              </Grid>
-            </div> */}
+            <div className={classes.root}>
+      <div className="container">
+        <TextField
+          id="standard-full-width"
+          label="Playlist Name"
+          style={{ margin: 8 }}
+          placeholder="Give it a cool name"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+        <TextField
+          id="standard-full-width"
+          label="Playlist Tag"
+          style={{ margin: 8 }}
+          placeholder="What is your playlist about?"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+      </div>
+      </div>
+      <br />
+      <Button size="small" color="primary">
+        Add Playlist
+      </Button>
           </Container>
         </div>
-        <Container className={classes.cardGrid} maxWidth="md">
-          {/* End hero unit */}
-          <Grid container spacing={4}>
-            {cards2.map((card) => (
-              <Grid item key={card.id} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Image title"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <span className="float-right">
-                      <img className={classes.viewicon} src={view} alt=" "></img>
-                      {card.views}</span>
-                    <h4>{card.title}</h4>
-                    <h6>{card.creator}</h6>
-                    <div style={{display: "inline-block"}} className={classes.root2}>#{card.tag}</div>
-                    {/* <Typography>
-                      This is a media card. You can use this section to describe the content.
-                    </Typography> */}
-                  </CardContent>
-                  <CardActions>
-                  {['Go to Player'].map((text, index) => (
-                    <Link to="/player">
-                      <ListItem button key={text}>
-                      <ListItemText primary={text} />
-                      </ListItem>
-                    </Link>
-                  ))}
-                    {/* <Button size="small" color="primary">
-                      Go to course
-                    </Button> */}
-
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
       </main>
       {/* Footer */}
       <footer className={classes.footer}>

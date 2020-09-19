@@ -29,6 +29,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import TextField from '@material-ui/core/TextField';
+import ImageUpload from "./ImageUpload";
+
 const drawerWidth = 200;
 function Copyright() {
   return (
@@ -43,6 +45,7 @@ function Copyright() {
   );
 }
 
+//const rootElement = document.getElementById("root");
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -143,12 +146,15 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(1),
     width: '25ch',
   },
+  add: {
+    marginLeft: theme.spacing(6),
+  }
 
 }));
 const username = "John Doe";
 // const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-export default function CreateChannel() {
+export default function AddVideo() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -232,7 +238,7 @@ export default function CreateChannel() {
       <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Create Your Own Channel
+              Add a New Video!
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
               It's Easy!
@@ -241,9 +247,9 @@ export default function CreateChannel() {
       <div className="container">
         <TextField
           id="standard-full-width"
-          label="Channel Name"
+          label="Video Title"
           style={{ margin: 8 }}
-          placeholder="Give it a cool name"
+          placeholder="Give it a cool title"
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -252,20 +258,41 @@ export default function CreateChannel() {
         />
         <TextField
           id="standard-full-width"
-          label="Channel Description"
+          label="Video Description"
           style={{ margin: 8 }}
-          placeholder="What is your channel about?"
+          placeholder="What is your video about?"
           fullWidth
           margin="normal"
           InputLabelProps={{
             shrink: true,
           }}
         />
+       
+       
+        <div>
+
+          <ImageUpload cardName="Input Image" />
+          
+
+          </div>
+        <div>
+        {/* <Button className={classes.chooseVideo}
+          variant="contained"
+          component="label"
+        >
+          Choose Video
+          <input
+            type="file"
+            style={{ display: "none" }}
+            accept='video/*'
+          />
+        </Button> */}
+        </div>
       </div>
       </div>
       <br />
-      <Button size="small" color="primary">
-        Create Channel
+      <Button size="small" color="primary" className={classes.add}>
+        Add Video
       </Button>
           </Container>
         </div>

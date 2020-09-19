@@ -44,7 +44,7 @@ class Course(models.Model):
     ]
 
     founder = models.ForeignKey(User, on_delete=models.CASCADE)
-    videos = models.ManyToManyField(Video)
+    videos = models.ManyToManyField(Video, null=True, blank=True)
     description = models.TextField()
     upvotes = models.IntegerField(default=0) # For Certification Purpose
     nominations = models.IntegerField(default=0) # used for Govt Schemes

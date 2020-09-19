@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    /* height: 100%; */
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+a:hover {
+   
+    text-decoration: none;
+}
+
+.main{
+    /* margin:0;
+    padding:0; */
+    display: grid;
+    grid-row: 1fr 1fr;
+    grid-column: 1fr 1fr;
+    margin: 20px 0;
+    padding-bottom: 20px;
+    background-color: rgb(231, 231, 231);
+    /* border: solid black; */
+    width: 100vw;
+    
+}
+
+.player-wrapper {
+    grid-area: 1 / 1 / 2 / 2;
+    position: relative;
+    padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */ 
+  
+    min-width: 60vw;
+    
+}
+  
+.react-player {
+position: absolute;
+top: 0;
+left: 0;
+padding: 30px;
+}
+
+.playlist-area{
+    grid-area: 1 / 2 / 3 / 3;
+   
+    float:right;
+   
+    
+}
+
+.playlist-videos-container{
+   
+    margin: 30px;
+    overflow: auto;
+    width: 450px;
+    height: 500px;
+    background-color: white;
+}
+
+.video-details{
+grid-area: 2 / 1 / 3 / 2; 
+
+display: flex;
+/* grid-column: 1fr 1fr 1fr; */
+/* grid-template-areas: 'avatar text-details button'; */
+/* border: solid black; */
+height: 150px;
+background-color: white;
+/* margin: 0 30px 30px 30px; */
+margin: 0 30px;
+}
+
+.playlist-info {
+   margin: 30px;
+    width: 30rem;
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background-color: white;
+    margin-top: 30px;
+    
+   
+}
+
+.Avatar{
+   
+    width: 150px;
+    grid-area: avatar;
+}
+
+.text-details{
+    display:flex;
+    grid-area: text-details;
+    flex-direction: column;
+  
+    float:left;
+    width: 70%;
+    justify-content: center;
+    padding: 10px;
+}
+.creator-name, .upload-date, .views, .playlist-name{
+    
+    font-weight: 600;
+    font-size: large;
+
+}
+
+
+.button {
+    margin: 30px;
+    height: 50px;
+   font-size: large;
+    color: white;
+    align-self: baseline;
+    
+}
+
+
+
+
+.like-button{
+    align-self: center;
+}
+
+.playlist-name {
+    padding: 20px;
+    font-size: 28px;
+}
+
+
+   

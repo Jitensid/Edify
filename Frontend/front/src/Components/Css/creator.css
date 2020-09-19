@@ -1,0 +1,141 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+    text-decoration: none;
+    
+}
+
+a,a:hover{
+    color:black;
+    text-decoration: none;
+}
+
+
+.page-main{
+    display: grid;
+    grid-template-areas: 'creator videos'
+    'certi videos';
+   grid-template-rows: 1fr 1fr;
+   grid-template-columns: 1fr 2fr;
+    /* background-color: grey; */
+    width: 100vw;
+    margin: 40px auto;
+    height:90vh;
+    padding:0;
+   
+}
+
+img{
+    height: 100px;
+}
+
+.videos {
+    grid-area: videos;
+    
+    overflow: auto;
+    
+    height: 80vh;
+    width: 65vw;
+    margin-top: 10vh;
+}
+
+.player-wrapper{
+    height: 80%;
+    margin-bottom: 5vh;
+}
+.skills{
+    margin-left:35vw;
+    height: 70px;
+    position: absolute;
+    z-index: 100;
+    
+    
+}
+
+.btn{
+    height: 30px;
+    width: 5rem;
+    padding-bottom: 2em;
+    margin: 0 20px 20px ;
+}
+
+
+
+.certi {
+    grid-area: certi;
+ 
+    height: 48vh;
+    overflow: auto;
+}
+
+.certificates{
+   vertical-align: middle;
+    /* height: 80; */
+    text-align: center;
+    padding: 20px;
+    margin: 20px ;
+    list-style: none;
+    color: black;
+    /* background-color: lightblue; */
+   
+}
+li{
+   font-size: 18px;
+   
+   
+    margin: 1em;
+}
+
+.creator {
+    grid-area: creator;
+    /* background-color: orange; */
+   
+}
+
+
+.creator-details{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    height: 32vh;
+    align-items: center;
+   
+}
+
+    
+.Avatar{
+    width: 100px;
+    height: 100px;
+    align-self: center;
+  
+}
+
+.creator-text-details{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    /* float:left; */
+    width: 50%;
+    padding: 10px;
+    justify-content: space-evenly;
+   
+}
+
+.creator-name, .upload-date, .views, .playlist-name{
+    font-weight: 600;
+    font-size: large;
+    margin: 10px 0;
+}
+
+
+.nominate-button {
+    margin-top: 20px;
+    height: 50px;
+    color: white;
+    align-self: center;
+
+}
+
